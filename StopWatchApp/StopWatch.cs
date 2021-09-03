@@ -11,11 +11,7 @@ namespace StopWatchApp
             _startTime = DateTime.MinValue;
         }
 
-        public DateTime StartTime 
-        {
-            set { _startTime = value; }
-            get { return _startTime; }
-        }
+        public DateTime StartTime {  get { return _startTime; } }
 
         public void ControlFlow(System.ConsoleKey keyPressed)
         {
