@@ -19,13 +19,11 @@ namespace StopWatchApp
             if(keyPressed == ConsoleKey.Enter && _startTime == DateTime.MinValue)
             {
                 _startTime = DateTime.Now;
-                return true;
             }
             else if(keyPressed == ConsoleKey.Enter)
             {
                 Duration();
                 ResetWatch();
-                return true;
             }
             else if (keyPressed == ConsoleKey.Escape)
             {
@@ -34,8 +32,8 @@ namespace StopWatchApp
             else
             {
                 Console.WriteLine(Constants.InvalidPrompt);
-                return true;
             }
+            return true;
         }
 
         private void Duration()
