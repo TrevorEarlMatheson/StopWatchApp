@@ -22,14 +22,8 @@ namespace StopWatchApp
 
                 var keyPressed = Console.ReadKey().Key;
 
-                if(keyPressed == ConsoleKey.Escape)
-                {
+                if (stopwatch.ControlFlow(keyPressed) == false)
                     break;
-                }
-                else
-                {
-                    stopwatch.ControlFlow(keyPressed);
-                }
             }
         }
     }
