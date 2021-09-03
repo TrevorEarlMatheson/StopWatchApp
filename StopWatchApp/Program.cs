@@ -7,6 +7,7 @@ namespace StopWatchApp
         static void Main(string[] args)
         {
             StopWatch stopwatch = new StopWatch();
+
             while (true)
             {
 
