@@ -24,15 +24,27 @@ namespace StopWatchApp
             get { return _startTime; }
         }
 
+        public void ControlFlow(System.ConsoleKey keyPressed)
+        {
+            Console.Clear();
+            if(keyPressed == ConsoleKey.Enter && _startTime == DateTime.MinValue)
+            {
+                _startTime = DateTime.Now;
+            }
+            else if(keyPressed == ConsoleKey.Enter)
+            {
+                Duration();
+                ResetWatch();
+            }
+            else
+            {
+                Console.WriteLine(_invalidPrompt);
+            }
+        }
+
         public void StartPrompt()
         {
             Console.WriteLine(_startPrompt);
-        }
-
-        public void InvalidKeyPrompt()
-        {
-            Console.Clear();
-            Console.WriteLine(_invalidPrompt);
         }
 
         public void RunningPrompt()
@@ -40,11 +52,9 @@ namespace StopWatchApp
             Console.WriteLine(_runningPrompt);
         }
 
-        public void Duration()
+        private void Duration()
         {
-            Console.Clear();
-            Console.WriteLine("Elapsed Time: " + (DateTime.Now - _startTime));
-            ResetWatch();
+            Console.WriteLine("\nElapsed Time: " + (DateTime.Now - _startTime));
         }
 
         private void ResetWatch()

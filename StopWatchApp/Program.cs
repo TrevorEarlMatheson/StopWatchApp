@@ -21,22 +21,13 @@ namespace StopWatchApp
 
                 var keyPressed = Console.ReadKey().Key;
 
-                if(keyPressed == ConsoleKey.Enter && stopwatch.StartTime == DateTime.MinValue)
-                {
-                    Console.Clear();
-                    stopwatch.StartTime = DateTime.Now;
-                }
-                else if(keyPressed == ConsoleKey.Enter && stopwatch.StartTime != DateTime.MinValue)
-                {
-                    stopwatch.Duration();
-                }
-                else if(keyPressed == ConsoleKey.Escape)
+                if(keyPressed == ConsoleKey.Escape)
                 {
                     break;
                 }
                 else
                 {
-                    stopwatch.InvalidKeyPrompt();
+                    stopwatch.ControlFlow(keyPressed);
                 }
             }
         }
