@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace StopWatchApp
 {
     class StopWatch
     {
         private DateTime _startTime;
-        private readonly string  _startPrompt;
-        private readonly string _runningPrompt;
-        private readonly string _invalidPrompt;
 
         public StopWatch()
         {
-            _startPrompt = "\nEnter: Start/Stop Timer\nEscape: Quit Program";
-            _runningPrompt = "\nStopwatch Running...";
-            _invalidPrompt = "\nInvalid key pressed.";
             _startTime = DateTime.MinValue;
         }
 
@@ -38,18 +31,8 @@ namespace StopWatchApp
             }
             else
             {
-                Console.WriteLine(_invalidPrompt);
+                Console.WriteLine(Constants.InvalidPrompt);
             }
-        }
-
-        public void StartPrompt()
-        {
-            Console.WriteLine(_startPrompt);
-        }
-
-        public void RunningPrompt()
-        {
-            Console.WriteLine(_runningPrompt);
         }
 
         private void Duration()

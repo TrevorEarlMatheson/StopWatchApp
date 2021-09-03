@@ -13,11 +13,11 @@ namespace StopWatchApp
 
                 if(stopwatch.StartTime == DateTime.MinValue)
                 {
-                    stopwatch.StartPrompt();
+                    Console.WriteLine(Constants.StartPrompt);
                 }
                 else
                 {
-                    stopwatch.RunningPrompt();
+                    Console.WriteLine(Constants.RunningPrompt);
                 }
 
                 var keyPressed = Console.ReadKey().Key;
