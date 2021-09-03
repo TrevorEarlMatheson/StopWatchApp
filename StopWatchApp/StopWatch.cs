@@ -37,7 +37,7 @@ namespace StopWatchApp
 
         private void Duration()
         {
-            Console.WriteLine("\nElapsed Time: " + (DateTime.Now - _startTime));
+            Console.WriteLine(Constants.Elapsed + (DateTime.Now - _startTime));
         }
 
         private void ResetWatch()
