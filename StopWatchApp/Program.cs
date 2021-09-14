@@ -10,15 +10,12 @@ namespace StopWatchApp
 
             while (true)
             {
-
-                if(stopwatch.StartTime == DateTime.MinValue)
-                {
-                    Console.WriteLine(Constants.StartPrompt);
-                }
-                else
+                if(stopwatch.StartTime != DateTime.MinValue)
                 {
                     Console.WriteLine(Constants.RunningPrompt);
                 }
+
+                Console.WriteLine(Constants.StartPrompt);
 
                 var keyPressed = Console.ReadKey().Key;
 
